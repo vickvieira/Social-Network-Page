@@ -3,7 +3,6 @@ import styled from 'styled-components';
 export const InputBox = styled.section`
 label {
     color: var(--gray-300);
-    font-size: 1rem;
 }
 
 .input-field {
@@ -17,14 +16,29 @@ label {
     border-radius: 2.875rem;
     border: 2px solid var(--white);
     background: transparent;
+    font-size: 1rem;
+
     }
 
-    img {
+    i {
         position: absolute;
         margin-left: 22.5rem;
         margin-top: -2.7rem;
-}
     }
+
 }
 
+`;
+
+export const Input = styled.input`
+
+&.white-placeholder::placeholder {
+    color: white;
+}
+&.white-placeholder: {
+    color: white;
+}
+input:focus {
+    outline: none;
+  }
 `;

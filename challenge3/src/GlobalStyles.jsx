@@ -13,6 +13,10 @@ const GlobalStyle = createGlobalStyle`
     --gray-600: #2E2F36;
     --gray-300: #75767D;
     --gray-200: #A1A3A7;
+
+   --gradient-button: linear-gradient(180deg, #AD2D14 0%, #F42E07 100%);
+   --gradient-background: linear-gradient(180deg, #2E2F36 0%, #17181C 100%);
+
   }
 
   body {
@@ -21,9 +25,13 @@ const GlobalStyle = createGlobalStyle`
     font-weight: 400;
     line-height: normal;
     background: var(--gradient-background, linear-gradient(180deg, #2E2F36 0%, #17181C 100%));
-    display: flex;
-    width: 94.5rem;
     height: 84.875rem;
+    margin: 0rem;
+    }
+
+    input {
+        color: white;
+      }
 `;
 
 export default GlobalStyle;
