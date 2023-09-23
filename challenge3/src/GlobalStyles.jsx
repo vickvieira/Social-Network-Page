@@ -32,6 +32,10 @@ const GlobalStyle = createGlobalStyle`
     input {
         color: white;
       }
+      
+    a {
+        text-decoration: none;
+    }
 `;
 
 export default GlobalStyle;

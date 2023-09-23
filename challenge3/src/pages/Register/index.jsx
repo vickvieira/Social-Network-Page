@@ -63,7 +63,9 @@ function Register() {
                 onChange={(e) => setConfirm(e.target.value)}
               />
             </div>
-            <StyledButton primary> Registrar-se</StyledButton>
+            <Link to="/">
+                <StyledButton primary="true">Registrar-se</StyledButton>
+            </Link>
             <p className="redirect">
               Já possui uma conta?{" "}
               <span className="login">
