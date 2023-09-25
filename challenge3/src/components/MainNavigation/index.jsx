@@ -4,7 +4,7 @@ import logo from "../../assets/compass.uol.png"
 
 const PERSON = [{ id: "p3", title: "Victoria" }];
 
-function MainNavigation({ active }) {
+function MainNavigation(active) {
   return (
       <Nav navigation={active}>
         <img src={logo} alt="Compass Logo" />
