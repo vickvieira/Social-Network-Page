@@ -6,7 +6,7 @@ import UserInput from "../../components/UserInput";
 import { useState } from 'react';
 import { User, Lock } from "@phosphor-icons/react";
 
-function Login() {
+function Login(person) {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
     
@@ -33,7 +33,7 @@ function Login() {
                 onChange={(e) => setPassword(e.target.value)}
               />
             </div>
-            <Link to="/user/home">
+            <Link to={`/${person.id}/home`}>
                 <StyledButton primary="true">Entrar</StyledButton>
             </Link>
             <p className="redirect">
