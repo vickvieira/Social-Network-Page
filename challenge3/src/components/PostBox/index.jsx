@@ -5,7 +5,7 @@ import { Container, Input } from "./style";
 import UserInput from "../UserInput";
 import { useState } from "react";
 
-const PostBox = (value, onChange) => {
+const PostBox = () => {
     return (
         <Container>
             <div className="post">

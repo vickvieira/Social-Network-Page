@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom";
 import { Div } from "./style";
 import PostBox from "../../components/PostBox";
 import Posts from "../../components/Posts";
+import Accordion from "../../components/Accordion";
 
 
 function Home() {
@@ -12,8 +13,12 @@ function Home() {
                 <PostBox></PostBox>
                 <Posts></Posts>
             </div>
-            <h1>Home</h1>
-            <p>User ID:{params.userId}</p>
+            <div className="accordions">
+                <Accordion></Accordion>
+                <Accordion></Accordion>
+            </div>
+            {/* <h1>Home</h1>
+            <p>User ID:{params.userId}</p> */}
         </Div>
     );
 }

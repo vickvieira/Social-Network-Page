@@ -16,6 +16,7 @@ export const Article = styled.article`
     align-items: center;
     gap: 1rem;
     align-self: stretch;
+    width: 41.625rem;
 
     img {
       width: 2rem;
@@ -110,7 +111,7 @@ export const Article = styled.article`
         align-self: stretch;
         padding-top: 1rem;
         border-top: 0.125rem solid var(--gray-650);
-        
+
         p{
             color: var(--yellow);
             font-family: Inter;
@@ -155,4 +156,5 @@ export const Input = styled.input`
   font-family: Poppins;
   font-size: 0.875rem;
   color: var(--gray-300);
+  border: none;
 `;

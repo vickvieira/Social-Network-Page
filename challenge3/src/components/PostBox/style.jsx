@@ -62,4 +62,5 @@ export const Input = styled.input`
   font-family: Poppins;
   font-size: 0.875rem;
   color: var(--gray-300);
+  border: none;
 `;

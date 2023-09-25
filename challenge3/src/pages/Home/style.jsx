@@ -19,4 +19,12 @@ gap: 1.5rem;
 flex: 1 0 0;
 align-self: stretch;
 }
+
+.accordions {
+    display: flex;
+flex-direction: column;
+align-items: flex-start;
+gap: 2.25rem;
+align-self: stretch;
+}
 `;
