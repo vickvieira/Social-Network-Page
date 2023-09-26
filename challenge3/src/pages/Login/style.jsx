@@ -5,6 +5,7 @@ export const LoginPage = styled.section`
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 100%;
+  background: var(--gradient-background, linear-gradient(180deg, #2E2F36 0%, #17181C 100%));
 
   .form {
     gap: 1.5rem;

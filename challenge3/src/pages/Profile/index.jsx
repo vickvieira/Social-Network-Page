@@ -1,16 +1,20 @@
 import { useParams } from "react-router-dom";
 import ProfileCover from "../../components/ProfileCover";
-import { Container } from "./style";
+import { Container, Div } from "./style";
 import AboutMe from "../../components/AboutMe";
+import ProfilePosts from "../../components/ProfilePosts";
 
 function Profile() {
     const params = useParams();
     return (
     <Container>
         <ProfileCover></ProfileCover>
+        <Div>
         <AboutMe></AboutMe>
-        <h1>Profile</h1>
-        <p>User ID: {params.userId}</p>
+        <ProfilePosts></ProfilePosts>
+        </Div>
+        {/* <h1>Profile</h1>
+        <p>User ID: {params.userId}</p> */}
     </Container>
     );
 }

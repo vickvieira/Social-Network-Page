@@ -23,7 +23,7 @@ const Posts = () => {
           apreciam o mundo como ele é.
         </p>
       </div>
-      <img src={postImage} />
+      <img className="post-img" src={postImage} />
       <div className="post-actions">
         <button>
           <ThumbsUp size={16} weight="fill" color="var(--gray-200)" />

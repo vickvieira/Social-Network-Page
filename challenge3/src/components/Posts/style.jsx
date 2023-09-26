@@ -11,6 +11,9 @@ export const Article = styled.article`
   border: 2px solid var(--gray-600);
   background: var(--gray-700);
 
+  .post-img{
+    align-self: stretch;
+  }
   .post {
     display: flex;
     align-items: center;

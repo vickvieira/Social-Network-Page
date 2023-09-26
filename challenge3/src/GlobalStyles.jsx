@@ -24,7 +24,7 @@ const GlobalStyle = createGlobalStyle`
     font-style: normal;
     font-weight: 400;
     line-height: normal;
-    background: var(--gradient-background, linear-gradient(180deg, #2E2F36 0%, #17181C 100%));
+    background: var(--gray-900);
     height: 84.875rem;
     margin: 0rem;
     }
