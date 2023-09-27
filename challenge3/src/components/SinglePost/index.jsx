@@ -1,11 +1,24 @@
-import { Clock, ThumbsUp, ChatCenteredDots, ShareNetwork, Camera, Paperclip, MapPin, Smiley, Image, DotsThreeOutline, PencilSimple, Trash } from "@phosphor-icons/react";
+import {
+  Clock,
+  ThumbsUp,
+  ChatCenteredDots,
+  ShareNetwork,
+  Camera,
+  Paperclip,
+  MapPin,
+  Smiley,
+  Image,
+  DotsThreeOutline,
+  PencilSimple,
+  Trash,
+} from "@phosphor-icons/react";
 import { Article, Input, UpperDiv, Options, Menu } from "./style";
 import picture from "../../assets/picture.svg";
 import { Fragment } from "react";
 import { useState } from "react";
 
 const SinglePost = (props) => {
-  const hasComments = props.commentName && props.comment; 
+  const hasComments = props.commentName && props.comment;
   const isAuthor = props.currentUserID === props.userId;
   const [isEditing, setIsEditing] = useState(false);
   const [newDescription, setNewDescription] = useState(props.description);
@@ -22,13 +35,7 @@ const SinglePost = (props) => {
       //o usuário atual não é o autor do post.
     }
   };
-  // const handleEditClick = () => {
-  //   if (isAuthor) {
-  //     props.onEdit(props.id);
-  //   } else {
-  //     //o usuário atual não é o autor do post.
-  //   }
-  // };
+
   const handleEditClick = () => {
     if (isAuthor) {
       setIsEditing(true);
@@ -44,6 +51,18 @@ const SinglePost = (props) => {
     } else {
       // O usuário atual não é o autor do post.
     }
+  };
+
+  //Curtida
+  const [liked, setLiked] = useState(false);
+
+  const handleLikeClick = () => {
+    setLiked((prevLiked) => !prevLiked);
+  };
+
+  const buttonColor = liked ? "var(--yellow)" : "var(--gray-200)";
+  const paragraphStyle = {
+    color: buttonColor,
   };
 
   return (
@@ -73,7 +92,10 @@ const SinglePost = (props) => {
           {isMenuOpen && (
             <Menu>
               {isAuthor && !isEditing && (
-                <button className="edit" onClick={handleEditClick}><PencilSimple size={24} weight="fill" color="var(--yellow)" />Editar</button>
+                <button className="edit" onClick={handleEditClick}>
+                  <PencilSimple size={24} weight="fill" color="var(--yellow)" />
+                  Editar
+                </button>
               )}
               {isEditing && (
                 <div>
@@ -81,10 +103,15 @@ const SinglePost = (props) => {
                     value={newDescription}
                     onChange={(e) => setNewDescription(e.target.value)}
                   />
-                  <button className="save" onClick={handleSaveClick}>Salvar</button>
+                  <button className="save" onClick={handleSaveClick}>
+                    Salvar
+                  </button>
                 </div>
               )}
-              <button className="delete" onClick={handleDeleteClick}><Trash size={24} weight="fill" color="var(--orange)" />Excluir</button>
+              <button className="delete" onClick={handleDeleteClick}>
+                <Trash size={24} weight="fill" color="var(--orange)" />
+                Excluir
+              </button>
             </Menu>
           )}
         </Options>
@@ -92,9 +119,9 @@ const SinglePost = (props) => {
 
       <img className="post-img" src={props.image} />
       <div className="post-actions">
-        <button>
-          <ThumbsUp size={16} weight="fill" color="var(--gray-200)" />
-          <p>Curtiu</p>
+        <button onClick={handleLikeClick}>
+          <ThumbsUp size={16} weight="fill" color={buttonColor} />
+          <p style={paragraphStyle}>{liked ? "Curtido" : "Curtir"}</p>
         </button>
         <button>
           <ChatCenteredDots size={16} color="var(--gray-200)" />

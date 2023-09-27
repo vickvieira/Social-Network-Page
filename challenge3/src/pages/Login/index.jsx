@@ -9,6 +9,7 @@ import { User, Lock } from "@phosphor-icons/react";
 function Login(person) {
     const [user, setUser] = useState('');
     const [password, setPassword] = useState('');
+
     
   return (
       <LoginPage>

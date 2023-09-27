@@ -2,6 +2,7 @@ import { InputBox, Input } from "./style";
 import { useState } from 'react';
 
 const UserInput = ({ label, icon, value, onChange }) => {
+  
     const [isFocused, setIsFocused] = useState(false);
 
     const handleFocus = () => {
@@ -12,11 +13,13 @@ const UserInput = ({ label, icon, value, onChange }) => {
         setIsFocused(false);
       };
 
+    const inputType = label === "Senha" || label === "Confirmar Senha" ? "password" : "text";
+
     return (
       <InputBox>
         <div className="input-field">
           <Input
-            type="text"
+            type={inputType}
             placeholder={label}
                 className={isFocused ?  'white-placeholder' : ''}
                 onFocus={handleFocus}

@@ -25,7 +25,6 @@ function Home() {
       </div>
       <div className="accordions">
         <Accordion></Accordion>
-        <Accordion></Accordion>
       </div>
       {/* <h1>Home</h1>
             <p>User ID:{params.userId}</p> */}

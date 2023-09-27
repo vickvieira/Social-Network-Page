@@ -1,7 +1,5 @@
-// PostProvider.js
-
 import { createContext, useContext, useState, useEffect } from "react";
-import { fetchPosts } from "../API/api"; // Importe a função fetchPosts
+import { fetchPosts } from "../API/api";
 
 const PostContext = createContext();
 
@@ -12,7 +10,6 @@ export function usePostContext() {
 export function PostProvider({ children }) {
   const [posts, setPosts] = useState([]);
 
-  // Use useEffect para buscar as postagens iniciais
   useEffect(() => {
     fetchPosts()
       .then((allPosts) => {
@@ -21,7 +18,7 @@ export function PostProvider({ children }) {
       .catch((error) => {
         console.error("Erro ao buscar posts:", error);
       });
-  }, []); // Certifique-se de passar um array vazio como dependência
+  }, []);
 
   const addPost = (newPost) => {
     setPosts((prevPosts) => [newPost, ...prevPosts]);
@@ -32,10 +29,8 @@ export function PostProvider({ children }) {
   };
 
   const editPost = (postId, updatedPostData) => {
-    // Encontre o post com base no postId
     const updatedPosts = posts.map((post) => {
       if (post.id === postId) {
-        // Atualize os campos do post com os novos dados
         return {
           ...post,
           ...updatedPostData,
@@ -44,7 +39,6 @@ export function PostProvider({ children }) {
       return post;
     });
 
-    // Defina o estado dos posts atualizado
     setPosts(updatedPosts);
   };
 

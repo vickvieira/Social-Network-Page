@@ -11,20 +11,20 @@ import { PostProvider } from './context/PostProvider';
 
 const router = createBrowserRouter([
   {
-    path: '/:userId',
+    path: "/:userId",
     element: (
-    <PostProvider>
-      <RootLayout />,
-    </PostProvider>
-  ),
+      <PostProvider>
+          <RootLayout />
+      </PostProvider>
+    ),
     children: [
-      { path: 'home', element: <Home />},
-      { path: 'profile', element: <Profile />},
-      { path: 'marketplace', element: <Marketplace />}
+      { path: "home", element: <Home /> },
+      { path: "profile", element: <Profile /> },
+      { path: "marketplace", element: <Marketplace /> },
     ],
   },
- { path: '/', element: <Login />},
- { path: '/register', element: <Register />}
+  { path: "/", element: <Login /> },
+  { path: "/register", element: <Register /> },
 ]);
 
 function App() {

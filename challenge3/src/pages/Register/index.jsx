@@ -13,8 +13,24 @@ function Register() {
     const [user, setUser] = useState('');
     const [birth, setBirth] = useState('');
     const [email, setEmail] = useState('');
+    const [emailError, setEmailError] = useState('');
     const [password, setPassword] = useState('');
     const [confirm, setConfirm] = useState('');
+    
+    const handleBlur = () => {
+      console.log("Elemento perdeu o foco");
+    };
+
+    // const handleEmailBlur = () => {
+    //   console.log("teste")
+    //   if (email.includes('@')) {
+    //     setEmailError('');
+    //   } else {
+    //     setEmailError('O email deve conter o caractere "@"');
+    //     console.log(emailError)
+    //   }
+    // };
+    
 
     return (
       <RegisterPage>
@@ -49,7 +65,9 @@ function Register() {
                 icon={<At size={24} />}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                onBlur = { handleBlur }
               />
+              {emailError && <p>{emailError}</p>}
               <UserInput
                 label="Senha"
                 icon={<Lock size={24} />}
@@ -83,6 +101,7 @@ function Register() {
         </div>
       </RegisterPage>
     );
+
 }
 
 export default Register;
