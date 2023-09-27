@@ -6,16 +6,21 @@ import Profile from './pages/Profile';
 import Login from './pages/login';
 import Register from './pages/register';
 import Marketplace from './pages/Marketplace';
+import { PostProvider } from './context/PostProvider';
 
 
 const router = createBrowserRouter([
   {
     path: '/:userId',
-    element: <RootLayout />,
+    element: (
+    <PostProvider>
+      <RootLayout />,
+    </PostProvider>
+  ),
     children: [
-      { path: '/:userId/home', element: <Home />},
-      { path: '/:userId/profile', element: <Profile />},
-      { path: '/:userId/marketplace', element: <Marketplace />}
+      { path: 'home', element: <Home />},
+      { path: 'profile', element: <Profile />},
+      { path: 'marketplace', element: <Marketplace />}
     ],
   },
  { path: '/', element: <Login />},
