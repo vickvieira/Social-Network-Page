@@ -1,5 +1,5 @@
-import { Clock, ThumbsUp, ChatCenteredDots, ShareNetwork, Camera, Paperclip, MapPin, Smiley, Image } from "@phosphor-icons/react";
-import { Article, Input } from "./style";
+import { Clock, ThumbsUp, ChatCenteredDots, ShareNetwork, Camera, Paperclip, MapPin, Smiley, Image, DotsThreeOutline, PencilSimple, Trash } from "@phosphor-icons/react";
+import { Article, Input, UpperDiv, Options, Menu } from "./style";
 import picture from "../../assets/picture.svg";
 import { Fragment } from "react";
 import { useState } from "react";
@@ -48,39 +48,48 @@ const SinglePost = (props) => {
 
   return (
     <Article>
-      {isAuthor && <button onClick={toggleMenu}>...</button>}
-      {isMenuOpen && (
-        <Fragment>
-          {isAuthor && !isEditing && (
-            <button onClick={handleEditClick}>Editar</button>
-          )}
-          {isEditing && (
-            <div>
-              <textarea
-                value={newDescription}
-                onChange={(e) => setNewDescription(e.target.value)}
-              />
-              <button onClick={handleSaveClick}>Salvar</button>
-            </div>
-          )}
-          <button onClick={handleDeleteClick}>Excluir</button>
-        </Fragment>
-      )}
-      <div className="content">
-        <div className="info">
-          <img src={picture} />
-          <hgroup>
-            <h4>
-              {props.name} {props.userId}
-            </h4>
-            <p>
-              <Clock size={12} color="var(--gray-200)" />
-              12 minutos atrás em <b>Paisagens Exuberantes</b>
-            </p>
-          </hgroup>
+      <UpperDiv>
+        <div className="content">
+          <div className="info">
+            <img src={picture} />
+            <hgroup>
+              <h4>
+                {props.name} {props.userId}
+              </h4>
+              <p>
+                <Clock size={12} color="var(--gray-200)" />
+                12 minutos atrás em <b>Paisagens Exuberantes</b>
+              </p>
+            </hgroup>
+          </div>
+          <p className="description">{props.description}</p>
         </div>
-        <p className="description">{props.description}</p>
-      </div>
+        <Options>
+          {isAuthor && (
+            <button className="dots" onClick={toggleMenu}>
+              <DotsThreeOutline size={32} weight="fill" color="white" />
+            </button>
+          )}
+          {isMenuOpen && (
+            <Menu>
+              {isAuthor && !isEditing && (
+                <button className="edit" onClick={handleEditClick}><PencilSimple size={24} weight="fill" color="var(--yellow)" />Editar</button>
+              )}
+              {isEditing && (
+                <div>
+                  <textarea
+                    value={newDescription}
+                    onChange={(e) => setNewDescription(e.target.value)}
+                  />
+                  <button className="save" onClick={handleSaveClick}>Salvar</button>
+                </div>
+              )}
+              <button className="delete" onClick={handleDeleteClick}><Trash size={24} weight="fill" color="var(--orange)" />Excluir</button>
+            </Menu>
+          )}
+        </Options>
+      </UpperDiv>
+
       <img className="post-img" src={props.image} />
       <div className="post-actions">
         <button>

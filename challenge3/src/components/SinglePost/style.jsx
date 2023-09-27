@@ -160,3 +160,72 @@ export const Input = styled.input`
   color: var(--gray-300);
   border: none;
 `;
+
+export const UpperDiv = styled.div`
+display: flex;
+justify-content: space-between;
+align-items: center;
+align-self: stretch;
+padding-right: 1rem;
+`;
+
+export const Options = styled.div`
+.dots {
+  background: none;
+    border: none;
+}
+`;
+
+export const Menu = styled.div`
+display: flex;
+width: 13.5rem;
+padding: 0.5625rem 0.5rem;
+flex-direction: column;
+align-items: flex-start;
+border-radius: 0.5rem;
+background: var(--gray-white, #FFF);
+box-shadow: 0px 48px 88px -4px rgba(23, 9, 54, 0.06);
+
+.edit, .delete {
+background: none;
+border: none;
+display: flex;
+padding: 0.75rem;
+align-items: center;
+gap: 0.75rem;
+align-self: stretch;
+font-family: Inter;
+font-size: 0.875rem;
+line-height: 1.5rem; /* 171.429% */
+letter-spacing: -0.00875rem;
+
+}
+
+textarea{
+  font-family: Poppins;
+    color: white;
+    margin-top: 1rem;
+    width: 40rem;
+    margin-left: -59rem;
+    position: absolute;
+    display: flex;
+    padding: 0.5rem 1.5rem;
+    align-items: center;
+    flex: 1 0 0;
+    border-radius: 2.875rem;
+    background: var(--gray-gray-650, #27282F);
+}
+
+.save {
+  position: absolute;
+  background: white;
+  border: none;
+margin-top: 2.5rem;
+    margin-left: -20rem;
+    font-family: Inter;
+    font-size: 0.875rem;
+    line-height: 1.5rem;
+    letter-spacing: -0.00875rem;
+    border-radius: 0.5rem;
+}
+`;
